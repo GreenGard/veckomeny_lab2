@@ -9,7 +9,7 @@ export default {
 
 </script>
 <template>
-  <Test>
+  <ToChoose>
     <div>Välj : {{ checkedNames }}</div>
 
     <input type="checkbox" id="meat" value="Meat" v-model="checkedNames">
@@ -20,5 +20,5 @@ export default {
 
     <input type="checkbox" id="veg" value="Veg" v-model="checkedNames">
     <label for="veg">Vegitariskt</label>
-  </Test>
+  </ToChoose>
 </template>
