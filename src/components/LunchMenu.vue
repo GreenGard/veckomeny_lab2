@@ -5,9 +5,11 @@ import ToolingIcon from "./icons/IconTooling.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import Meat from "../components/Meat.vue";
 </script>
 <template>
   <H1>LunchMeny</H1>
+  <Meat></Meat>
 
   <LunchmenuItem>
     <h1>Måndag</h1>
