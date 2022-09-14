@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MealsView from "../views/MealsView.vue";
+import MealsView from "../components/MealsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
