@@ -9,7 +9,7 @@ const router = createRouter({
       name: "meals",
       component: MealsView,
     },
-      ],
+  ],
 });
 
 export default router;
