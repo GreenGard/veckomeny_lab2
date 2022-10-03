@@ -16,8 +16,8 @@ export default {
 </script>
 
 <template>
+  <h1 class="foodcheckerheader">Välj önskad meny:</h1>
   <div class="foodcheckercontainer">
-    <h3 class="foodcheckerheader">Välj önskad meny:</h3>
     <div class="checkboxes">
       <label>Kött</label>
       <input type="checkbox" value="Meat" v-model="checkedFoods" />

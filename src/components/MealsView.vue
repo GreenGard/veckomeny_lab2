@@ -3,9 +3,11 @@ import PlanYourMeal from "./PlanYourMeal.vue";
 import Weekday from "./Weekday-Item.vue";
 import ChangeImage from "./ChangeImage.vue";
 import ChangeSize from "./ChangeFontSize.vue";
+import Welcome from "./Welcome.vue";
 
 export default {
   components: {
+    Welcome,
     ChangeSize,
     ChangeImage,
     PlanYourMeal,
@@ -21,16 +23,13 @@ export default {
 
 <template>
   <div>
-    <ChangeSize />
+    <Welcome />
   </div>
   <div class="contentTop">
     <PlanYourMeal
       class="foodChecker"
       @checkedFoods="(checkedFoods) => (foods = checkedFoods)"
     />
-  </div>
-  <div>
-    <ChangeImage :foods="foods" />
   </div>
   <div class="content">
     <Weekday :foods="foods" :weekday="'Måndag'" />

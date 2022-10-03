@@ -9,7 +9,9 @@ body {
 
 .contentTop {
     font-size: 24px;
-    margin-left: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 17px;
 }
 
@@ -20,13 +22,23 @@ body {
     justify-items: center;
 
 }
-.changesize{
+
+.changesize {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     width: 100%;
     justify-items: center;
 
 }
+
+p {
+    font-size: 72px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
 dd {
     display: inline-grid;
     margin-inline: auto;
@@ -55,9 +67,7 @@ div.row img {
 }
 
 
-* {
-    box-sizing: border-box;
-}
+
 
 .responsive {
     padding: 0 6px;
@@ -91,9 +101,11 @@ button {
     border: none;
     box-shadow: 5px 3px #888888;
 }
-svg{
+
+svg {
     margin-top: 5px;
 }
+
 #changesizebutton {
     background-color: #40ADAD;
     border-radius: 5px;
@@ -112,8 +124,7 @@ svg{
 }
 
 #app {
-    max-width: 1280px;
-    font-weight: normal;
+     font-weight: normal;
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1735px) {
@@ -152,7 +163,7 @@ svg{
 
 }
 
-@media only screen and (min-width: 778px) and (max-width: 1122px) {
+@media only screen and (min-width: 768px) and (max-width: 1122px) {
     .content {
         grid-template-columns: 1fr 1fr;
         margin: 68px;
@@ -167,9 +178,33 @@ svg{
     .row {
         flex-wrap: wrap;
     }
+    p {
+        font-size: 57px;
+
+    }
+    h3{
+        font-size: 45px ;
+    }
+
+    .checkbox{
+        padding: 15px;
+        font-size: 27px;
+    }
+    button{
+        font-size: 33px;
+    }
+    h1{
+        font-size: 37px;
+    }
+    .contentTop{
+        font-size: 30px;
+    }
+    a.foodName{
+        font-size: 28px;
+    }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 778px) {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
     .content {
         grid-template-columns: 1fr;
     }
@@ -185,6 +220,25 @@ svg{
 
     #app {
         margin: -5px;
+    }
+
+    p {
+        font-size: 45px;
+
+    }
+
+    .checkbox{
+        padding: 15px;
+        font-size: 27px;
+    }
+    button{
+        font-size: 27px;
+    }
+    h1{
+        font-size: 37px;
+    }
+    a.foodName{
+        font-size: 28px;
     }
 
 }
