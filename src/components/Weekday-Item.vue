@@ -6,13 +6,22 @@ export default {
   },
   data() {
     return {
-      meals: [{ foodName: "", category: "" }],
+      meals: [{foodName: "", category: ""}],
       newMealPlan: "",
       category: "Meat",
+      flash: '',
+      flashTick: null,
     };
   },
   methods: {
+    clearTick() {
+      if (this.flashTick) {
+        window.clearTimeout(this.flashTick)
+      }
+      this.flashTick = null
+    },
     addMeals() {
+
       if (this.newMealPlan !== "") {
         this.meals.push({
           foodName: this.newMealPlan,
@@ -21,12 +30,29 @@ export default {
         this.newMealPlan = "";
 
       }
+      this.flash = 'En ny maträtt lades till listan, du ser den under vald kategori';
     },
+
     removeMeals(foodName) {
-      this.meals = this.meals.filter((f) => f.category !== foodName );
+      this.meals = this.meals.filter((f) => f.category !== foodName);
     },
   },
-};
+  watch: {
+    flash: function (newValue, oldValue) {
+      if (newValue !== oldValue && newValue) {
+
+        this.clearTick()
+
+        this.flashTick = window.setTimeout(() => {
+          this.flash = ''
+        }, 3000)
+      }
+    },
+    beforeDestroy() {
+      this.clearTick()
+    }
+  }
+}
 </script>
 <template>
   <div class="weekdayCard">
@@ -38,9 +64,9 @@ export default {
           {{ addedFood.foodName }} {{ addedFood.category }}
         </a>
         <button
-          v-if="foods.includes(addedFood.category)"
-          class="removeButton"
-          @click="removeMeals(addedFood.category)">
+            v-if="foods.includes(addedFood.category)"
+            class="removeButton"
+            @click="removeMeals(addedFood.category)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
                viewBox="0 0 16 16">
             <path
@@ -49,30 +75,31 @@ export default {
                   d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
           </svg>
         </button>
-         </div>
+      </div>
     </div>
     <div class="weekdayinput">
       <div class="weekdaytextinput">
-        <input v-model="newMealPlan"  />
+        <input v-model="newMealPlan"/>
         <button @click="addMeals()">Lägg till lista</button>
+        <div v-if="flash" v-text="flash"></div>
 
       </div>
 
-
       <div class="weekdayradioinput">
         <div class="checkbox">
-          <input type="radio" value="Meat" v-model="category" />
+          <input type="radio" value="Meat" v-model="category"/>
           <label>Kött</label>
         </div>
         <div class="checkbox">
-          <input type="radio" value="Fish" v-model="category" />
+          <input type="radio" value="Fish" v-model="category"/>
           <label>Fisk</label>
         </div>
         <div class="checkbox">
-          <input type="radio" value="Veggie" v-model="category" />
+          <input type="radio" value="Veggie" v-model="category"/>
           <label>Vegetarisk</label>
         </div>
       </div>
     </div>
   </div>
+
 </template>

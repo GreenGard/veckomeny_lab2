@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+
     "@syncfusion/ej2-vue-buttons": "^20.2.46",
     "@syncfusion/ej2-vue-lists": "^20.2.46",
     "bootstrap-icons": "^1.9.1",

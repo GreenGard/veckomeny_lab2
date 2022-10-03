@@ -12,6 +12,7 @@ export default {
     ChangeImage,
     PlanYourMeal,
     Weekday,
+
   },
   data() {
     return {
@@ -25,6 +26,7 @@ export default {
   <div>
     <Welcome />
   </div>
+
   <div class="contentTop">
     <PlanYourMeal
       class="foodChecker"

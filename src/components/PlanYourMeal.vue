@@ -1,5 +1,7 @@
 <script>
+
 export default {
+
   data() {
     return {
       checkedFoods: ["Meat", "Fish", "Veggie"],
@@ -32,4 +34,5 @@ export default {
       <input type="checkbox" value="Veggie" v-model="checkedFoods" />
     </div>
   </div>
+
 </template>

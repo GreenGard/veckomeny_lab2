@@ -126,6 +126,10 @@ svg {
 #app {
      font-weight: normal;
 }
+div.weekdayCard{
+    font-size: 24px;
+}
+
 
 @media screen and (min-width: 1201px) and (max-width: 1735px) {
     .content {
@@ -143,6 +147,7 @@ svg {
         flex-wrap: wrap;
     }
 
+
 }
 
 
@@ -155,6 +160,7 @@ svg {
         width: auto;
         height: auto;
         margin-right: 150px;
+
     }
 
     .row {
@@ -202,6 +208,7 @@ svg {
     a.foodName{
         font-size: 28px;
     }
+
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
